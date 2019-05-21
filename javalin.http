@@ -1,0 +1,33 @@
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection).
+#
+# Following HTTP Request Live Templates are available:
+# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+
+POST http://localhost:7000/
+Content-Type: application/json
+
+{
+  "uuid": "cafebabe-cafe-babe-cafe-cafebabecafe",
+  "lName": "NEW NAME",
+  "fName": "it's denis"
+}
+
+### Get request with a header
+GET http://localhost:7000/5
+Accept: application/json
+
+### Get all
+GET http://localhost:7000/
+Accept: application/json
+
+###
+DELETE http://localhost:7000/0
+Content-Type: application/json
+
+> {%
+ client.assert(response.status === 200, "ups");
+ %}
+
+###
